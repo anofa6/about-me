@@ -1,0 +1,109 @@
+body {
+  background-image: url("./cloud.jpg");
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding-top: 50px;
+}
+
+#intro {
+  background: dodgerblue;
+  width: 110px;
+  font-size: 20px;
+}
+
+#name {
+  animation-name: rainbow;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  word-spacing: 30px;
+  letter-spacing: 5px;
+  font-size: 40px;
+}
+
+.fun-facts {
+  background: slateblue;
+  color: white;
+  width: fit-content;
+  padding: 0 15px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about {
+  color: DarkGreen;
+  border: 5px dashed coral;
+  padding: 5px 15px;
+}
+
+#mileage {
+  background: darkgreen;
+  transition-duration: 0.2s;
+}
+
+#mileage:hover {
+  background: none;
+  font-size: 25px;
+}
+
+#caption {
+  position: relative;
+  bottom: 45px;
+  left: 10px;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  padding: 1px 5px;
+  z-index: 0;
+}
+
+@keyframes rainbow {
+  0% { color: red; }
+  17% { color: orange; }
+  33% { color: yellow; }
+  50% { color: green; }
+  67% { color: blue; }
+  83% { color: purple; }
+  100% { color: red; }
+}
+
+#shifting {
+  animation-name: shift;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+@keyframes shift {
+  0% { transform: translate(-20px, -20px); } /* 1 */
+  11% { transform: translate(-20px, -20px); } /* 1 */
+  22% { transform: translate(-20px, 20px); } /* 2 */
+  33% { transform: translate(-20px, 0px); } /* N12 */
+  44% { transform: translate(0px, 0px); } /* N34 */
+  56% { transform: translate(0, -20px); } /* 3 */
+  67% { transform: translate(0, 20px); } /* 4 */
+  78% { transform: translate(0, 0); } /* N34 */
+  89% { transform: translate(20px, 0); } /* N5 */
+  100% { transform: translate(20px, -20px); } /* 5 */
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  position: relative;
+  z-index: 3;
+  transition-duration: 1s;
+}
+
+img:hover {
+  z-index: -3;
+}
